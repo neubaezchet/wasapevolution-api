@@ -6,7 +6,7 @@ WORKDIR /evolution
 RUN apk add --no-cache git bash
 
 # Clonar Evolution API (última versión estable)
-RUN git clone -b v2.3.7 https://github.com/EvolutionAPI/evolution-api.git .
+RUN git clone -b 2.3.7 https://github.com/EvolutionAPI/evolution-api.git .
 
 # Instalar dependencias de Node
 RUN npm ci --omit=dev --ignore-scripts
