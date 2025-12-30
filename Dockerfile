@@ -2,13 +2,13 @@ FROM node:20-alpine
 
 WORKDIR /evolution
 
-# Instalar dependencias
+# Instalar dependencias del sistema
 RUN apk add --no-cache git bash
 
-# Clonar Evolution API v2 (última versión estable)
-RUN git clone -b v2.1.0 https://github.com/EvolutionAPI/evolution-api.git .
+# Clonar Evolution API (última versión estable)
+RUN git clone -b v2.3.7 https://github.com/EvolutionAPI/evolution-api.git .
 
-# Instalar paquetes
+# Instalar dependencias de Node
 RUN npm ci --omit=dev --ignore-scripts
 
 EXPOSE 8080
